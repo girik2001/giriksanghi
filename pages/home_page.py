@@ -6,6 +6,7 @@ st.set_page_config(layout='wide')
 def logout_button_clicked():
     st.session_state.logged_in = False
     st.session_state.page = 'login'
+    st.session_state.username = None
 
 def about_user_page_trigger():
     st.session_state.page = 'About the User'
