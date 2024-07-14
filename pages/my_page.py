@@ -25,11 +25,38 @@ def about_me():
         edu_df = pd.DataFrame(data={'Course':['Secondary', 'Higher Secondary', 'UnderGraduate'], 'School/College Name':['Gitanjali Devashray', 'Sri Chaitanya Jr Kalashala', 'Malla Reddy Institute of Engineering and Technology'], 'Specialization Name':['Science', 'Science', 'Information Technology'], 'Year of Passing':[2016, 2018, 2022], 'GPA':[9.8, 9.56, 7.7]})
         st.dataframe(edu_df, use_container_width=True, hide_index=True)
 
-    with st.container(border=True):
-        st.subheader('Skills')
+    col1, col2 = st.columns([1,1])
+    with col2:
+        with st.container(border=True):
+            st.subheader('Languages Known')
+            st.write('''<ul>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Telugu</li>
+        </ul>''', unsafe_allow_html=True)
+    with col1:
+        with st.container(border=True):
+            st.subheader('Technical Languages Known')
+            st.write('''<ul>
+            <li>Python</li>
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>SQL</li>
+        </ul>''', unsafe_allow_html=True)
 
-    with st.container(border=True):
-        st.subheader('Languages Known')
+    col1, col2 = st.columns([1,1])
+    with col1:
+        with st.container(border=True):
+            st.subheader('Skills')
+    with col2:
+        with st.container(border=True):
+            st.subheader('Hobbies')
 
     with st.container(border=True):
         st.subheader('Consent')
+        st.write('''I hereby declare that all the information given above is true and correct to the best of
+my knowledge and belief.''')
