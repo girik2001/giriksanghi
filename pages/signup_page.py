@@ -34,7 +34,6 @@ def signup_user_button_clicked(new_first_name, new_last_name, new_user_name, new
     if len(new_user_name)!=0 and len(new_password)!=0:
         if collection.count_documents({'email' : new_email_address}) == 0:
             print(collection.insert_one({
-                '_id' : collection.count_documents({})+1,
                 'firstname' : new_first_name,
                 'lastname' : new_last_name,
                 'username' : new_user_name,
