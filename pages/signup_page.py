@@ -30,7 +30,7 @@ USER_DATA_SHEETS_SERVICE_ACCOUNT_CREDS = {
 gc = gspread.service_account_from_dict(USER_DATA_SHEETS_SERVICE_ACCOUNT_CREDS)
 user_data_parent_sheet = gc.open_by_key(st.secrets.USER_DATA_SHEETS_ID)
 
-def signup_user_button_clicked(new_first_name, new_last_name, new_user_name, new_email_address.lower(), new_password):
+def signup_user_button_clicked(new_first_name, new_last_name, new_user_name, new_email_address, new_password):
     if len(new_user_name)!=0 and len(new_password)!=0:
         if collection.count_documents({'email' : new_email_address}) == 0:
             print(collection.insert_one({
@@ -71,6 +71,6 @@ elif len(new_password)!=0 and new_password!=confirm_new_password:
 
 col1, col2 = st.columns([1,1])
 with col1:
-    st.button('Signup', on_click=signup_user_button_clicked, args=(new_first_name, new_last_name, new_user_name, new_email_address, new_password), use_container_width=True)
+    st.button('Signup', on_click=signup_user_button_clicked, args=(new_first_name, new_last_name, new_user_name, new_email_address.lower(), new_password), use_container_width=True)
 with col2:
     st.button('Back to Login', on_click=signup_to_login_button_clicked, type='primary', use_container_width=True)
