@@ -26,14 +26,6 @@ def about_me():
         st.dataframe(edu_df, use_container_width=True, hide_index=True)
 
     col1, col2 = st.columns([1,1])
-    with col2:
-        with st.container(border=True):
-            st.subheader('Languages Known')
-            st.write('''<ul>
-            <li>English</li>
-            <li>Hindi</li>
-            <li>Telugu</li>
-        </ul>''', unsafe_allow_html=True)
     with col1:
         with st.container(border=True):
             st.subheader('Technical Languages Known')
@@ -47,11 +39,19 @@ def about_me():
             <li>JS</li>
             <li>SQL</li>
         </ul>''', unsafe_allow_html=True)
+    with col2:
+        with st.container(border=True):
+            st.subheader('Skills')
 
     col1, col2 = st.columns([1,1])
     with col1:
         with st.container(border=True):
-            st.subheader('Skills')
+            st.subheader('Languages Known')
+            st.write('''<ul>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Telugu</li>
+        </ul>''', unsafe_allow_html=True)
     with col2:
         with st.container(border=True):
             st.subheader('Hobbies')
